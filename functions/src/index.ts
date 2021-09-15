@@ -1,11 +1,13 @@
 import * as functions from "firebase-functions";
-import reply from "./reply";
 
-exports.Linebot = functions
-  .region("asia-northeast1")
-  .https.onRequest((req, res) => {
-    if (req.body.events[0].message.type !== "text") {
-      return;
-    }
-    reply(req.body);
-  });
+// // Start writing Firebase Functions
+// // https://firebase.google.com/docs/functions/typescript
+//
+// export const helloWorld = functions.https.onRequest((request, response) => {
+//   functions.logger.info("Hello logs!", {structuredData: true});
+//   response.send("Hello from Firebase!");
+// });
+
+exports.Linebot = functions.https.onRequest((req, res) => {
+  res.send("Hello, world!");
+});
